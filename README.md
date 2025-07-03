@@ -14,29 +14,29 @@ Allows users to view, create, edit, and delete support tickets, and view detaile
 
 ## Key Features
 
-View all tickets in a list.
+- View all tickets in a list.
 
-View detailed information for a single ticket.
+- View detailed information for a single ticket.
 
-Create new tickets with form validation.
+- Create new tickets with form validation.
 
-Edit existing tickets.
+- Edit existing tickets.
 
-Delete tickets.
+- Delete tickets.
 
-Add comments to tickets.
+- Add comments to tickets.
 
-Dynamic status and priority styling.
+- Dynamic status and priority styling.
 
-Responsive design (if you make it responsive!).
+- Responsive design (if you make it responsive!).
 
-Client-side routing.
+- Client-side routing.
 
 ## Technologies Used
 
-Frontend: Angular (mention version if you want, e.g., Angular 17+), TypeScript, HTML, CSS.
-Libraries: RxJS (for Observables).
-Dev Tools: Angular CLI.
+- Frontend: Angular (mention version if you want, e.g., Angular 17+), TypeScript, HTML, CSS.
+- Libraries: RxJS (for Observables).
+- Dev Tools: Angular CLI.
 
 ## What I Learned/Challenges Overcome:
 
@@ -84,8 +84,8 @@ ng serve --open
 
 Marissa Chapman
 
-LinkedIn: [https://www.linkedin.com/feed/](https://www.linkedin.com/feed/)
-Github: [https://github.com/MarissaUI](https://github.com/MarissaUI)
+- LinkedIn: [https://www.linkedin.com/in/marissa-chapman/](https://www.linkedin.com/in/marissa-chapman/)
+- Github: [https://github.com/MarissaUI](https://github.com/MarissaUI)
 
 ## Code scaffolding
 
