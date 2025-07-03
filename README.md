@@ -34,7 +34,7 @@ Allows users to view, create, edit, and delete support tickets, and view detaile
 
 ## Technologies Used
 
-- Frontend: Angular (mention version if you want, e.g., Angular 17+), TypeScript, HTML, CSS.
+- Frontend: Angular, TypeScript, HTML, CSS.
 - Libraries: RxJS (for Observables).
 - Dev Tools: Angular CLI.
 
