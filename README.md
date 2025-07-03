@@ -1,6 +1,8 @@
-# ItTicketingSystem
+# IT Ticketing System (Angular Frontend)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+
+Live Demo Link: MUST BE AT THE TOP! Make it prominent: 🚀 Live Demo: 
 
 ## Development server
 
