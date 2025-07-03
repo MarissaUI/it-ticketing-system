@@ -2,17 +2,90 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
 
-Live Demo Link: MUST BE AT THE TOP! Make it prominent: 🚀 Live Demo: 
+Live Demo Link: MUST BE AT THE TOP! Make it prominent: 🚀 Live Demo: [https://it-ticketing-system.netlify.app/tickets](https://it-ticketing-system.netlify.app/tickets)
 
-## Development server
+<img width="1512" alt="Screenshot 2025-07-03 at 1 15 50 PM" src="https://github.com/user-attachments/assets/2e76bdee-1d16-4188-aa3f-40f384763b33" />
 
-To start a local development server, run:
+## Description
+
+A single-page application (SPA) for managing IT support tickets.
+
+Allows users to view, create, edit, and delete support tickets, and view detailed information including comments.
+
+## Key Features
+
+View all tickets in a list.
+
+View detailed information for a single ticket.
+
+Create new tickets with form validation.
+
+Edit existing tickets.
+
+Delete tickets.
+
+Add comments to tickets.
+
+Dynamic status and priority styling.
+
+Responsive design (if you make it responsive!).
+
+Client-side routing.
+
+## Technologies Used
+
+Frontend: Angular (mention version if you want, e.g., Angular 17+), TypeScript, HTML, CSS.
+Libraries: RxJS (for Observables).
+Dev Tools: Angular CLI.
+
+## What I Learned/Challenges Overcome:
+
+- Gained hands-on experience with Angular's standalone components.
+
+- Implemented robust client-side routing with route parameters.
+
+- Managed application state using RxJS Observables.
+
+- Practiced dependency injection for services.
+
+- Debugged common Angular compilation and rendering issues (e.g., AOT vs JIT, component bootstrapping).
+
+- Improved UI/UX with CSS styling for navigation and component layout.
+
+## Setup/Installation
+
+Clone the repository 
 
 ```bash
-ng serve
+
+git clone https://github.com/MarissaUI/it-ticketing-system.git
+
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate into the project directory 
+
+```bash
+cd it-ticketing-system
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+To run the development server, run:
+
+```bash
+ng serve --open
+```
+
+## Author/Contact
+
+Marissa Chapman
+
+LinkedIn: [https://www.linkedin.com/feed/](https://www.linkedin.com/feed/)
+Github: [https://github.com/MarissaUI](https://github.com/MarissaUI)
 
 ## Code scaffolding
 
