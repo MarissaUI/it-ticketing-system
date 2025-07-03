@@ -1,0 +1,46 @@
+<h2>All Tickets</h2>
+
+<button routerLink="/tickets/new" class="btn btn-primary">Create New Ticket</button>
+
+<div *ngIf="tickets$ | async as tickets; else loading">
+    <table *ngIf="tickets.length > 0; else noTickets" class="ticket-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Submitted By</th>
+            <th>Assigned To</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets">
+        <td>{{ ticket.id }}</td>
+        <td>{{ ticket.title }}</td>
+        <td>
+            <span [ngClass]="getStatusClass(ticket.status)">{{ ticket.status }}</span>
+        </td>
+        <td>
+            <span [ngClass]="getPriorityClass(ticket.priority)">{{ ticket.priority }}</span>
+        </td>
+        <td>{{ ticket.submittedBy }}</td>
+        <td>{{ ticket.assignedTo || 'Unassigned' }}</td>
+        <td>{{ ticket.createdAt | date:'short' }}</td>
+        <td>
+            <button (click)="viewTicket(ticket.id)" class="btn btn-view">View</button>
+            <button (click)="editTicket(ticket.id)" class="btn btn-edit">Edit</button>
+            <button (click)="deleteTicket(ticket.id)" class="btn btn-delete">Delete</button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+    <ng-template #noTickets>
+        <p class="no-tickets-message">No tickets found. Click "Create New Ticket" to add one!</p>
+    </ng-template>
+</div>
+<ng-template #loading>
+    <p>Loading tickets...</p>
+</ng-template>

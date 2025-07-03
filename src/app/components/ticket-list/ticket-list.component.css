@@ -1,0 +1,54 @@
+/* src/app/components/ticket-list/ticket-list.component.css */
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.ticket-table th, .ticket-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.ticket-table th {
+    background-color: #f2f2f2;
+}
+
+.btn {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-view { background-color: #17a2b8; color: white; }
+.btn-edit { background-color: #ffc107; color: #333; }
+.btn-delete { background-color: #dc3545; color: white; }
+
+/* Priority Badges */
+.priority-urgent { background-color: #dc3545; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.priority-high { background-color: #ffc107; color: #333; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.priority-medium { background-color: #007bff; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.priority-low { background-color: #28a745; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+
+/* Status Badges */
+.status-open { background-color: #007bff; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.status-in-progress { background-color: #ffc107; color: #333; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.status-resolved { background-color: #28a745; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.status-closed { background-color: #6c757d; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+.status-pending { background-color: #17a2b8; color: white; padding: 3px 8px; border-radius: 3px; font-size: 0.8em; }
+
+.no-tickets-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: #666;
+}

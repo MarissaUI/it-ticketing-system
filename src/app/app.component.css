@@ -1,0 +1,7 @@
+/* src/app/app.component.css */
+
+.main-nav {
+    display: flex; /* Makes the nav a flex container */
+    gap: 20px;     /* Adds a gap of 20px between flex items (your links) */
+    /* You can adjust this value */
+  }

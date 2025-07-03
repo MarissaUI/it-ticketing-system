@@ -1,0 +1,55 @@
+<div *ngIf="ticket$ | async as ticket; else loadingOrNotFound" class="ticket-detail-container">
+    <h2>Ticket Details: {{ ticket.title }}</h2>
+
+    <div class="ticket-info">
+        <p><strong>ID:</strong> {{ ticket.id }}</p>
+        <p><strong>Status:</strong> <span [ngClass]="{
+            'status-open': ticket.status === 'Open',
+            'status-in-progress': ticket.status === 'In Progress',
+            'status-resolved': ticket.status === 'Resolved',
+            'status-closed': ticket.status === 'Closed',
+            'status-pending': ticket.status === 'Pending'
+        }">{{ ticket.status }}</span></p>
+        <p><strong>Priority:</strong> <span [ngClass]="{
+            'priority-urgent': ticket.priority === 'Urgent',
+            'priority-high': ticket.priority === 'High',
+            'priority-medium': ticket.priority === 'Medium',
+            'priority-low': ticket.priority === 'Low'
+        }">{{ ticket.priority }}</span></p>
+        <p><strong>Category:</strong> {{ ticket.category || 'N/A' }}</p>
+        <p><strong>Submitted By:</strong> {{ ticket.submittedBy }}</p>
+        <p><strong>Assigned To:</strong> {{ ticket.assignedTo || 'Unassigned' }}</p>
+        <p><strong>Created At:</strong> {{ ticket.createdAt | date:'medium' }}</p>
+        <p><strong>Last Updated:</strong> {{ ticket.updatedAt | date:'medium' }}</p>
+        <p class="ticket-description"><strong>Description:</strong> {{ ticket.description }}</p>
+    </div>
+
+    <div class="ticket-comments">
+        <h3>Comments</h3>
+        <div *ngIf="ticket.comments && ticket.comments.length > 0; else noComments">
+            <div *ngFor="let comment of ticket.comments" class="comment">
+                <p><strong>{{ comment.user }}:</strong> {{ comment.text }}</p>
+                <small>{{ comment.timestamp | date:'short' }}</small>
+            </div>
+        </div>
+        <ng-template #noComments>
+            <p>No comments yet.</p>
+        </ng-template>
+
+        <div class="add-comment-section">
+            <h4>Add New Comment</h4>
+            <textarea [(ngModel)]="newComment" placeholder="Type your comment here..." rows="3"></textarea>
+            <button (click)="addComment(ticket.id)" [disabled]="!newComment.trim()" class="btn btn-add-comment">Add Comment</button>
+        </div>
+    </div>
+
+    <div class="ticket-actions">
+        <button (click)="goToEdit(ticket.id)" class="btn btn-edit">Edit Ticket</button>
+        <button (click)="goBackToList()" class="btn btn-secondary">Back to List</button>
+    </div>
+</div>
+
+<ng-template #loadingOrNotFound>
+    <p>Loading ticket details or ticket not found...</p>
+    <button (click)="goBackToList()" class="btn btn-secondary">Back to List</button>
+</ng-template>

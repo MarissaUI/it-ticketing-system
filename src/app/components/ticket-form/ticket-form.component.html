@@ -1,0 +1,71 @@
+<div class="ticket-form-container">
+    <h2>{{ pageTitle }}</h2>
+
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" formControlName="title" required>
+            <div *ngIf="ticketForm.get('title')?.invalid && ticketForm.get('title')?.touched" class="error">
+                Title is required.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" rows="5" required></textarea>
+        <div *ngIf="ticketForm.get('description')?.invalid && ticketForm.get('description')?.touched" class="error-message">
+            Description is required.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" formControlName="status">
+            <option *ngFor="let statusOpt of statuses" [value]="statusOpt">{{ statusOpt }}</option>
+        </select>
+        <div *ngIf="ticketForm.get('status')?.invalid && ticketForm.get('status')?.touched" class="error-message">
+            Status is required.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" formControlName="priority">
+            <option *ngFor="let priorityOpt of priorities" [value]="priorityOpt">{{ priorityOpt }}</option>
+            </select>
+            <div *ngIf="ticketForm.get('priority')?.invalid && ticketForm.get('priority')?.touched" class="error-message">
+                Priority is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category (Optional):</label>
+            <select id="category" formControlName="category">
+                <option [value]="null">Select Category</option>
+                <option *ngFor="let catOpt of categories" [value]="catOpt">{{ catOpt }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="assignedTo">Assigned To (Optional):</label>
+            <input type="text" id="assignedTo" formControlName="assignedTo">
+        </div>
+
+        <div class="form-group">
+            <label for="submittedBy">Submitted By:</label>
+            <input type="text" id="submittedBy" formControlName="submittedBy" required>
+            <div *ngIf="ticketForm.get('submittedBy')?.invalid && ticketForm.get('submittedBy')?.touched" class="error-message">
+                Submitted By is required.
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" [disabled]="!ticketForm.valid" class="btn btn-primary">
+                {{ isEditMode ? 'Update Ticket' : 'Create Ticket' }}
+            </button>
+            <button type="button" (click)="goBackToList()" class="btn btn-secondary">Cancel</button>
+        </div>
+    </form>
+</div>
+
